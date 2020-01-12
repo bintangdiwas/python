@@ -2,6 +2,7 @@ import math
 import time
 import requests, json
 
+#液体分量配列
 cooking_volume = {
     "ml": 1,
     "ltr": 1000,
@@ -14,6 +15,7 @@ cooking_volume = {
 	"oz": 29.574
 }
 
+#個体分量配列
 cooking_mass = {
     'g': 1,
     'oz': 453.39/16,
@@ -21,13 +23,16 @@ cooking_mass = {
     'kg': 1000
 }
 
+#ウェルカムメッセージ
 print("""Welcome to Bintang's First Program!
 \n1: Currency Converter
 2. Unit Converter: Cooking - Volume
 3. Unit Converter: Cooking - Mass""")
 
+#プログラム選択
 answer = int(input("Which program do you wish to operate: "))
 
+#通貨換算ツール
 if answer == 1:
     print("Currency Converter")
     print("""this program supports:
@@ -49,8 +54,9 @@ if answer == 1:
 
         print(value_cur, to_currency)
 
-########
+########APIリクエスト
 
+#通貨入力
     from_currency = input("Which type of currency would you like to convert from: ")
     to_currency = input("Which type of currency would you like to convert to: ")
     currency_amount = float(input("Enter your value: " ))
@@ -61,6 +67,7 @@ if answer == 1:
 
     input()
 
+#液体分量換算ツール
 elif answer == 2:
     print("Unit Converter: Cooking - Volume")
     def convert_cv(input_cv, output_cv, value):
@@ -83,6 +90,7 @@ elif answer == 2:
 
     input()
 
+#個体分量換算ツール
 elif answer == 3:
     print("Unit Converter: Cooking - Mass")
     def convert_cm(input_cm, output_cm, value):
@@ -104,6 +112,7 @@ elif answer == 3:
 
     input()
 
+#選択にないものの場合
 else:
     print("Invalid Selection, please try again.")
 
